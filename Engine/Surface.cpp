@@ -3,6 +3,7 @@
 #include <cassert>
 #include <fstream>
 
+
 Surface::Surface( const std::string& filename )
 {
 	std::ifstream file( filename,std::ios::binary );
@@ -131,4 +132,9 @@ int Surface::GetWidth() const
 int Surface::GetHeight() const
 {
 	return height;
+}
+
+RectI Surface::GetRect() const
+{
+	return {0,Surface::width,0,Surface::height};
 }
